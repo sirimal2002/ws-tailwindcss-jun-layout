@@ -15,7 +15,7 @@ export default function Home() {
         <h1 className="text-4xl font-bold mb-8 lg:text-center">Welcome</h1>
 
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          <Card className="relative h-full group lg:col-start-2">
+          <Card className="relative h-full group">
             <Link
               href="/dashboard"
               className="after:absolute after:inset-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-lg"
@@ -33,6 +33,28 @@ export default function Home() {
             <CardFooter>
               <span className="text-sm text-muted-foreground flex items-center gap-2 group-hover:text-primary transition-colors">
                 View Dashboard
+                <ArrowRight className="h-4 w-4" />
+              </span>
+            </CardFooter>
+          </Card>
+
+          <Card className="relative h-full group">
+            <Link
+              href="/chat"
+              className="after:absolute after:inset-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-lg"
+            >
+              <CardHeader>
+                <CardTitle>Chat</CardTitle>
+              </CardHeader>
+            </Link>
+            <CardDescription className="px-6 pb-4">
+              Real-time messaging platform with a modern interface. Connect with
+              users, share files, and collaborate effectively through individual
+              and group conversations.
+            </CardDescription>
+            <CardFooter>
+              <span className="text-sm text-muted-foreground flex items-center gap-2 group-hover:text-primary transition-colors">
+                Open Chat
                 <ArrowRight className="h-4 w-4" />
               </span>
             </CardFooter>

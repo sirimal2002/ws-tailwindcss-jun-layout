@@ -2,6 +2,7 @@ import {
   BarChart2,
   Calendar,
   ChevronsUpDown,
+  CommandIcon,
   Database,
   FileText,
   GalleryVerticalEnd,
@@ -14,6 +15,9 @@ import {
 } from "lucide-react";
 import { RailCollapse, TriggerMobileSidebar } from "./triggers";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import AppSwitcher from "@/components/dashboard/AppSwitcher";
+import UserSetting from "@/components/dashboard/UserSetting";
+import CollapsibleMenu from "@/components/dashboard/CollapsibleMenu";
 
 const menuGroups = [
   {
@@ -66,18 +70,22 @@ export default function Dashboard() {
         <div className="jun-edgeContent jun-sidebarContainer">
           <div className="flex flex-col p-2">
             {/* App Switcher */}
-            <button className="jun-sidebarMenuButton jun-sidebarMenuButton-spacing-2 jun-sidebarMenuButton-shrink-spacing-0">
-              <div className="jun-sidebarIcon flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
-                <GalleryVerticalEnd className="size-4" />
-              </div>
-              <div className="jun-sidebarText text-left text-sm leading-tight flex items-center">
-                <div className="flex-1">
-                  <div className="truncate font-semibold">Acme Inc.</div>
-                  <div className="truncate text-xs">Enterprise</div>
+            <AppSwitcher>
+              <button className="jun-sidebarMenuButton jun-sidebarMenuButton-spacing-2 jun-sidebarMenuButton-shrink-spacing-0">
+                <div className="jun-sidebarIcon flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
+                  <CommandIcon className="size-4" />
                 </div>
-                <ChevronsUpDown className="ml-auto size-4 " />
-              </div>
-            </button>
+                <div className="jun-sidebarText text-left text-sm leading-tight flex items-center">
+                  <div className="flex-1">
+                    <div className="truncate font-semibold">
+                      Layout Workshop
+                    </div>
+                    <div className="truncate text-xs">Hello, Jun</div>
+                  </div>
+                  <ChevronsUpDown className="ml-auto size-4 " />
+                </div>
+              </button>
+            </AppSwitcher>
           </div>
           <div className="flex-1 min-h-0 overflow-auto">
             {/* Menu Groups */}
@@ -128,6 +136,8 @@ export default function Dashboard() {
               </div>
             ))}
 
+            <CollapsibleMenu />
+
             <div className="jun-sidebarGroup">
               <div className="jun-sidebarMenu">
                 {/* Settings */}
@@ -141,19 +151,21 @@ export default function Dashboard() {
           <div className="p-2">
             <ul className="jun-sidebarMenu">
               <li className="jun-sidebarMenuItem">
-                <button className="jun-sidebarMenuButton jun-sidebarMenuButton-spacing-2 jun-sidebarMenuButton-shrink-spacing-0">
-                  <Avatar className="jun-sidebarIcon h-8 w-8 rounded-lg">
-                    <AvatarImage src="/unknow.png" alt="Unknown" />
-                    <AvatarFallback className="rounded-lg">CN</AvatarFallback>
-                  </Avatar>
-                  <div className="jun-sidebarText flex items-center flex-1 text-left text-sm leading-tight">
-                    <div className="flex-1">
-                      <div className="truncate font-semibold">Unknown</div>
-                      <div className="truncate text-xs">unknown@test.com</div>
+                <UserSetting>
+                  <button className="jun-sidebarMenuButton jun-sidebarMenuButton-spacing-2 jun-sidebarMenuButton-shrink-spacing-0">
+                    <Avatar className="jun-sidebarIcon h-8 w-8 rounded-lg">
+                      <AvatarImage src="/unknow.png" alt="Unknown" />
+                      <AvatarFallback className="rounded-lg">CN</AvatarFallback>
+                    </Avatar>
+                    <div className="jun-sidebarText flex items-center flex-1 text-left text-sm leading-tight">
+                      <div className="flex-1">
+                        <div className="truncate font-semibold">Unknown</div>
+                        <div className="truncate text-xs">unknown@test.com</div>
+                      </div>
+                      <ChevronsUpDown className="ml-auto size-4" />
                     </div>
-                    <ChevronsUpDown className="ml-auto size-4" />
-                  </div>
-                </button>
+                  </button>
+                </UserSetting>
               </li>
             </ul>
           </div>
