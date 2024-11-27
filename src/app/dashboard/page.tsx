@@ -1,17 +1,9 @@
 import {
-  BarChart2,
-  Calendar,
   ChevronsUpDown,
   CommandIcon,
-  Database,
-  FileText,
-  GalleryVerticalEnd,
-  Home,
-  Mail,
   MoreHorizontal,
   Plus,
   Settings,
-  Users,
 } from "lucide-react";
 import {
   RailCollapse,
@@ -24,43 +16,7 @@ import UserSetting from "@/components/dashboard/UserSetting";
 import CollapsibleMenu from "@/components/dashboard/CollapsibleMenu";
 import { OrderTable } from "@/components/dashboard/OrderTable";
 import { OrderStats } from "@/components/dashboard/OrderStats";
-
-export const menuGroups = [
-  {
-    label: "Overview",
-    items: [
-      {
-        icon: Home,
-        label: "Dashboard",
-        menus: [
-          {
-            title: "History",
-            url: "#",
-          },
-          {
-            title: "Starred",
-            url: "#",
-          },
-          {
-            title: "Settings",
-            url: "#",
-          },
-        ],
-      },
-      { icon: BarChart2, label: "Analytics" },
-      { icon: FileText, label: "Reports" },
-    ],
-  },
-  {
-    label: "Workspace",
-    items: [
-      { icon: Mail, label: "Inbox" },
-      { icon: Calendar, label: "Calendar" },
-      { icon: Database, label: "Projects" },
-      { icon: Users, label: "Team" },
-    ],
-  },
-];
+import { menuGroups } from "./_data/menu";
 
 export default function Dashboard() {
   return (
