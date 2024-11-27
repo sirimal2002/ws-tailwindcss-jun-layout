@@ -1,4 +1,4 @@
-# Dashboard workshop
+# Dashboard layout workshop
 
 - Run `npm install && npm run dev`
 - Open http://localhost:3333/workshop/dashboard/
