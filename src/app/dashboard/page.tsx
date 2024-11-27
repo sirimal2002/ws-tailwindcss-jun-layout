@@ -25,7 +25,7 @@ import CollapsibleMenu from "@/components/dashboard/CollapsibleMenu";
 import { OrderTable } from "@/components/dashboard/OrderTable";
 import { OrderStats } from "@/components/dashboard/OrderStats";
 
-const menuGroups = [
+export const menuGroups = [
   {
     label: "Overview",
     items: [
