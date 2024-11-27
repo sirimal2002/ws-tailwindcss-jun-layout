@@ -1,5 +1,5 @@
 "use client";
-import { Menu } from "lucide-react";
+import { Menu, PanelLeftClose, PanelRightClose } from "lucide-react";
 import { triggerEdgeCollapse, triggerEdgeDrawer } from "tailwindcss-jun-layout";
 
 export const TriggerMobileSidebar = () => (
@@ -16,4 +16,16 @@ export const RailCollapse = () => (
     onClick={(event) => triggerEdgeCollapse({ event })}
     title="Toggle Sidebar"
   />
+);
+
+export const TriggerLeftSidebarCollapse = () => (
+  <button
+    className="jun-edgeCollapseTrigger"
+    aria-label="Toggle Sidebar"
+    onClick={(event) => triggerEdgeCollapse({ event })}
+    title="Toggle Sidebar"
+  >
+    <PanelLeftClose className="jun-edgeUncollapsed-visible" />
+    <PanelRightClose className="jun-edgeCollapsed-visible" />
+  </button>
 );
