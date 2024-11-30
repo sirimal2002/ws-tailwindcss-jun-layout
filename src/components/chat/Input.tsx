@@ -21,7 +21,7 @@ export function Input({ onSend }: InputProps) {
   };
 
   return (
-    <div className="border-t bg-background p-4">
+    <div className="p-4">
       <div className="flex items-end gap-2">
         <div className="flex gap-1">
           <Button variant="ghost" size="icon">
