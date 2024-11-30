@@ -17,3 +17,5 @@ Feel free to add your creativity on top of the tasks.
   - [ ] Hide the navigation on mobile and use EdgeSidebar drawer mode instead
 - [ ] Apply InsetSidebar to the table of contents in blog post detail page
   - [ ] Change between `sticky` (default), `fixed`, and `absolute` to see the difference
+  - [ ] Hide InsetSidebar on mobile and render table of content on EdgeSidebar drawer instead.
+- [ ] Move shared components to `src/app/blog/layout.tsx`

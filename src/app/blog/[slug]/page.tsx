@@ -3,7 +3,11 @@ import { notFound } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
 import { Markdown } from "@/components/blog/Markdown";
 import { TableOfContents } from "@/components/blog/TableOfContents";
-import { BlogFooter } from "@/components/blog/BlogFooter";
+import { menuGroups } from "@/app/dashboard/_data/menu";
+import { Button } from "@/components/ui/button";
+import { List } from "lucide-react";
+import { triggerEdgeDrawerRight } from "tailwindcss-jun-layout";
+import TocTrigger from "./TocTrigger";
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -26,8 +30,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <div className="flex-1">
+    <>
+      <main className="jun-content">
         <div className="relative h-[50vh] bg-muted">
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/80 z-10" />
 
@@ -66,25 +70,46 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
         </div>
 
-        <div className="container mx-auto max-w-6xl px-6 py-12">
-          <div className="flex gap-12">
-            {/* Main Content */}
-            <div className="flex-1">
-              <article className="prose prose-neutral dark:prose-invert max-w-none">
-                <Markdown content={post.content} />
-              </article>
-            </div>
+        <div className="container mx-auto max-w-6xl px-6 py-12 gap-4">
+          <div className="flex-1">
+            <article className="prose prose-neutral dark:prose-invert max-w-none">
+              <Markdown content={post.content} />
+            </article>
+          </div>
 
-            {/* Table of Contents Sidebar */}
-            <div className="hidden lg:block w-64">
-              <div className="sticky top-8">
+          <div className="jun-insetSidebar jun-insetSidebar-w-[180px] md:jun-insetSidebar-w-[220px] hidden md:block">
+            <div className="jun-insetContent">
+              <div className="pt-9">
                 <TableOfContents items={post.tableOfContents} />
               </div>
             </div>
           </div>
         </div>
+
+        <TocTrigger />
+      </main>
+      <div className="jun-edgeSidebar jun-edgeSidebarR jun-edgeSidebarR-drawer">
+        <div className="jun-edgeContent">
+          {menuGroups.map((group) => (
+            <div className="jun-sidebarGroup">
+              <div className="jun-sidebarGroupLabel">{group.label}</div>
+              <ul className="jun-sidebarMenu">
+                {group.items.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <li className="jun-sidebarMenuItem">
+                      <button className="jun-sidebarMenuButton">
+                        <Icon className="jun-sidebarIcon w-4 h-4" />
+                        {item.label}
+                      </button>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          ))}
+        </div>
       </div>
-      <BlogFooter />
-    </div>
+    </>
   );
 }

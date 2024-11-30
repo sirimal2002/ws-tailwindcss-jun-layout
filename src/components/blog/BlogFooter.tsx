@@ -45,7 +45,7 @@ const socialLinks = [
 
 export function BlogFooter() {
   return (
-    <footer className="bg-muted/40">
+    <footer className="jun-footer bg-muted/40">
       <div className="container mx-auto max-w-6xl px-6 py-12">
         {/* Newsletter Section */}
         <div className="mb-12">
