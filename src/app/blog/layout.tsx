@@ -66,7 +66,9 @@ export default function BlogLayout({
         </div>
       </aside>
       {children}
-      <BlogFooter />
+      <footer className="jun-footer">
+        <BlogFooter />
+      </footer>
     </div>
   );
 }
