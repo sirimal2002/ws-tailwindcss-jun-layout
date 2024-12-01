@@ -1,5 +1,5 @@
 "use client";
-import { ChatList } from "@/components/chat/ChatList";
+import { ChatList } from "./ChatList";
 import { Input } from "@/components/chat/Input";
 import { createMockChats } from "./_data/mock-chats";
 import { createMockMessages } from "./_data/mock-messages";
