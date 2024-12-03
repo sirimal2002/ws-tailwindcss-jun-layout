@@ -47,7 +47,7 @@ export default function ChatPage() {
         <Conversation messages={mockMessages} />
       </main>
 
-      <aside className="jun-edgeSidebar jun-edgeSidebarR">
+      <aside className="jun-edgeSidebarR">
         <div className="jun-edgeContent">
           <ChatSetting
             participant={mockSettings.participant}

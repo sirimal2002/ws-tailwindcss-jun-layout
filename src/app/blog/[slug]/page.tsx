@@ -4,9 +4,6 @@ import { Badge } from "@/components/ui/badge";
 import { Markdown } from "@/components/blog/Markdown";
 import { TableOfContents } from "@/components/blog/TableOfContents";
 import { menuGroups } from "@/app/dashboard/_data/menu";
-import { Button } from "@/components/ui/button";
-import { List } from "lucide-react";
-import { triggerEdgeDrawerRight } from "tailwindcss-jun-layout";
 import TocTrigger from "./TocTrigger";
 
 interface BlogPostPageProps {
@@ -88,10 +85,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
         <TocTrigger />
       </main>
-      <div className="jun-edgeSidebar jun-edgeSidebarR jun-edgeSidebarR-drawer">
+      <div className="jun-edgeSidebarR jun-edgeSidebarR-drawer">
         <div className="jun-edgeContent">
           {menuGroups.map((group) => (
-            <div className="jun-sidebarGroup">
+            <div key={group.label} className="jun-sidebarGroup">
               <div className="jun-sidebarGroupLabel">{group.label}</div>
               <ul className="jun-sidebarMenu">
                 {group.items.map((item) => {

@@ -103,7 +103,18 @@ export default function ChatPage() {
         <Conversation messages={mockMessages} />
       </main>
 
-      <aside className="jun-edgeSidebar jun-edgeSidebarR-drawer jun-edgeSidebarR-w-[100vw] md:jun-edgeSidebarR-w-[256px] xl:jun-edgeSidebarR-w-[320px] md:jun-edgeSidebarR-permanent jun-edgeSidebarR jun-edgeSidebarR-permanent-autoCollapse-xl">
+      <aside
+        className={`
+        jun-edgeSidebarR
+        jun-edgeSidebarR-drawer
+        jun-edgeSidebarR-w-[100vw]
+        md:jun-edgeSidebarR-permanent
+        md:jun-edgeSidebarR-w-[256px]
+        xl:jun-edgeSidebarR-w-[320px]
+        jun-edgeSidebarR-permanent-autoCollapse-xl
+        jun-edgeSidebarR-collapsed-w-[0px]
+      `}
+      >
         <div className="jun-edgeContent">
           <Button
             variant="ghost"
