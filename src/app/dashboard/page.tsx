@@ -29,7 +29,14 @@ export default function Dashboard() {
         </div>
       </div>
 
-      <aside className="jun-edgeSidebar jun-edgeSidebar-drawer md:jun-edgeSidebar-permanent md:jun-edgeSidebar-w-[280px] jun-edgeSidebar-permanent-autoCollapse-lg">
+      <aside
+        className="jun-edgeSidebar
+          jun-edgeSidebar-drawer
+          md:jun-edgeSidebar-permanent
+          md:jun-edgeSidebar-w-[280px]
+          md:jun-edgeSidebar-collapsed-w-[3rem]
+          jun-edgeSidebar-permanent-autoCollapse-lg"
+      >
         <div className="jun-edgeContent jun-sidebarContainer">
           <div className="flex flex-col p-2">
             {/* App Switcher */}
@@ -137,7 +144,7 @@ export default function Dashboard() {
       </aside>
 
       <main className="jun-content">
-        <div className="jun-insetSidebar jun-insetSidebar-w-[200px]">
+        <div className="jun-insetSidebar jun-insetSidebar-w-[200px] hidden lg:block">
           <div className="jun-insetContent jun-sidebarContainer">
             {menuGroups.map((group, index) => (
               <div key={index} className="jun-sidebarGroup relative p-2">
@@ -187,7 +194,7 @@ export default function Dashboard() {
             ))}
           </div>
         </div>
-        <div className="container p-4 space-y-4">
+        <div className="p-4 space-y-4">
           <OrderStats />
           <OrderTable />
         </div>
