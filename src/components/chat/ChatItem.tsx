@@ -15,13 +15,14 @@ export function ChatItem({ chat, selected, onClick }: ChatItemProps) {
     <button
       onClick={onClick}
       className={cn(
+        "jun-sidebarMenuButton jun-sidebarMenuButton-spacing-3",
         "flex items-center gap-3 w-full p-3 rounded-lg text-left",
         "hover:bg-accent",
         selected && "bg-accent"
       )}
     >
       <div className="relative">
-        <Avatar>
+        <Avatar className="jun-sidebarIcon">
           <AvatarImage src={chat.avatar} alt={chat.name} />
           <AvatarFallback>{chat.name.slice(0, 2)}</AvatarFallback>
         </Avatar>
@@ -29,7 +30,7 @@ export function ChatItem({ chat, selected, onClick }: ChatItemProps) {
           <span className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-background" />
         )}
       </div>
-      <div className="flex-1 overflow-hidden">
+      <div className="jun-sidebarText flex-1 overflow-hidden">
         <div className="flex items-center justify-between">
           <span className="font-medium">{chat.name}</span>
           <span className="text-xs text-muted-foreground">
